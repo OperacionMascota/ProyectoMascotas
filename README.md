@@ -1,5 +1,5 @@
 # ProyectoMascotas
 Proyecto para Taller Avanzado de programacion
 
-# OPERACIN MASCOTA
+# OPERACION MASCOTA
 ## Aplicación para adoptar y dar en adopcion una mascota
