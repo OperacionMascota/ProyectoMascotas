@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="operacionMascota.Models.ADOPTAR_MASCOTA">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAgYAQAAABAAAAAQACAAAAAAEBAAgA=</HashCode>
+      <FileName>Models\ADOPTAR_MASCOTA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="operacionMascota.Models.CIUDADES">
+    <Position X="0.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgABAAAAAAAgAAAEAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\CIUDADES.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="operacionMascota.Models.COMUNAS" Collapsed="true">
+    <Position X="10.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAYAAACgAAAAAAAAAAA=</HashCode>
+      <FileName>Models\COMUNAS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="operacionMascota.Models.DONACIONES" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAKAAAAAAAABAAAAIAgAAACAAAAAADAAACAAAIAAAQA=</HashCode>
+      <FileName>Models\DONACIONES.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="operacionMascota.Models.GENERO_MASCOTA" Collapsed="true">
+    <Position X="10.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GAAAAAAAAAAAAAAAAAAAAAAAAAACAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\GENERO_MASCOTA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="operacionMascota.Models.LISTA_NEGRA" Collapsed="true">
+    <Position X="5.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAEAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Models\LISTA_NEGRA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="operacionMascota.Models.MASCOTA" Collapsed="true">
+    <Position X="6.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAABwASAAAAAAAgAEABAAgQAQQACAAMAAABAARAgAA=</HashCode>
+      <FileName>Models\MASCOTA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="operacionMascota.Models.MASCOTA_ABANDONADA" Collapsed="true">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgAQAQEQIQBAAACAIAABAAAACQAAAAAAAQEEAAAYAAA=</HashCode>
+      <FileName>Models\MASCOTA_ABANDONADA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="operacionMascota.Models.PAISES" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgCAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\PAISES.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="operacionMascota.Models.PERSONA" Collapsed="true">
+    <Position X="9" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iAAAgAYAAAAQAAACIEAAAABAAMAAAAgdgAACABAAAIA=</HashCode>
+      <FileName>Models\PERSONA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="operacionMascota.Models.REGIONES" Collapsed="true">
+    <Position X="9.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAIAAAAAAAAAAEAAAAAAAAAgAgAAAAAAAAAAA=</HashCode>
+      <FileName>Models\REGIONES.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="operacionMascota.Models.REGISTRO_ADOPCION" Collapsed="true">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAACAAAAEIABAAAA=</HashCode>
+      <FileName>Models\REGISTRO_ADOPCION.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="operacionMascota.Models.REGISTRO_DONACION" Collapsed="true">
+    <Position X="6.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAEIAAAAAAAAAAGIAAAAAA=</HashCode>
+      <FileName>Models\REGISTRO_DONACION.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="operacionMascota.Models.SEGUIMIENTO_ADOPCION" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAYAAAAAAAAAAAAAAAAAAEBAAAAAA=</HashCode>
+      <FileName>Models\SEGUIMIENTO_ADOPCION.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="operacionMascota.Models.SOLICITUD_DONACIONES" Collapsed="true">
+    <Position X="8.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAEAAAgAAQIAAAAACAAABgAAAAAAAEAHAAAgA=</HashCode>
+      <FileName>Models\SOLICITUD_DONACIONES.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="operacionMascota.Models.TIPO_DONACION" Collapsed="true">
+    <Position X="10" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAEAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Models\TIPO_DONACION.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="operacionMascota.Models.TIPO_MASCOTA" Collapsed="true">
+    <Position X="9" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAABAAgAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\TIPO_MASCOTA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="operacionMascota.Models.TIPO_PERSONA" Collapsed="true">
+    <Position X="5.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAgAACAAAAAAQAAAkAAAAEJAAAAAA=</HashCode>
+      <FileName>Models\TIPO_PERSONA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="operacionMascota.Models.UBICACION_MASCOTA" Collapsed="true">
+    <Position X="5.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAQAgAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Models\UBICACION_MASCOTA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="operacionMascota.Models.USUARIO_LISTA" Collapsed="true">
+    <Position X="7.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAABAAAAABAAAAAAEAAAAAIA=</HashCode>
+      <FileName>Models\USUARIO_LISTA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

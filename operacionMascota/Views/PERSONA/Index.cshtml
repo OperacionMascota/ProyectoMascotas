@@ -1,0 +1,111 @@
+﻿@model IEnumerable<operacionMascota.Models.PERSONA>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NOMBRE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AP_PATERNO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AP_MATERNO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TELEFONO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USUARIO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PASSWORD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_CREAR_P)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PER_ELIMINAR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PER_ACTUALIZAR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FPER_CREAR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FPER_ELIMINAR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FPER_ACTUALIZAR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIPO_PERSONA.TIPO_PERSONA1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REGISTRO_ADOPCION.ID_REGISTRO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOMBRE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AP_PATERNO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AP_MATERNO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TELEFONO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USUARIO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PASSWORD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_CREAR_P)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PER_ELIMINAR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PER_ACTUALIZAR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FPER_CREAR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FPER_ELIMINAR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FPER_ACTUALIZAR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIPO_PERSONA.TIPO_PERSONA1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REGISTRO_ADOPCION.ID_REGISTRO)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_PERSONA }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_PERSONA }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_PERSONA })
+        </td>
+    </tr>
+}
+
+</table>

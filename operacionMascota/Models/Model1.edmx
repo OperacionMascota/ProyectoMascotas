@@ -1,0 +1,1517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="opemascotasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ADOPTAR_MASCOTA">
+          <Key>
+            <PropertyRef Name="ID_AD" />
+          </Key>
+          <Property Name="ID_AD" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_MASCOTA" Type="bigint" />
+          <Property Name="ADOPTADO" Type="bit" />
+          <Property Name="USER_CREAR_AD" Type="varchar" MaxLength="40" />
+          <Property Name="USER_ELIMINAR_AD" Type="varchar" MaxLength="40" />
+          <Property Name="USER_ACTUALIZAR_AD" Type="varchar" MaxLength="40" />
+          <Property Name="USER_CREAR_FAD" Type="datetime" />
+          <Property Name="USER_ELIMINAR_FAD" Type="datetime" />
+          <Property Name="USER_ACTUALIZAR_FAD" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CIUDADES">
+          <Key>
+            <PropertyRef Name="ID_CIUDAD" />
+          </Key>
+          <Property Name="ID_CIUDAD" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_REGION" Type="bigint" Nullable="false" />
+          <Property Name="CIUDAD" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="COMUNAS">
+          <Key>
+            <PropertyRef Name="ID_COMUNA" />
+          </Key>
+          <Property Name="ID_COMUNA" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_CIUDAD" Type="bigint" Nullable="false" />
+          <Property Name="COMUNA" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DONACIONES">
+          <Key>
+            <PropertyRef Name="ID_DONAR" />
+          </Key>
+          <Property Name="ID_DONAR" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_TIPOD" Type="bigint" />
+          <Property Name="ID_PERSONA" Type="bigint" Nullable="false" />
+          <Property Name="FOTO_BOLETA" Type="varbinary" MaxLength="100" />
+          <Property Name="FOTO_BOLETA2" Type="varbinary" MaxLength="100" />
+          <Property Name="FOTO_BOLETA3" Type="varbinary" MaxLength="100" />
+          <Property Name="USER_CREAR_DN" Type="varchar" MaxLength="40" />
+          <Property Name="USER_ELIMINAR_DN" Type="varchar" MaxLength="40" />
+          <Property Name="USER_ACTUALIZAR_DN" Type="varchar" MaxLength="40" />
+          <Property Name="USER_CREAR_FDN" Type="datetime" />
+          <Property Name="USER_ELIMINAR_FDN" Type="datetime" />
+          <Property Name="USER_ACTUALIZAR_FDN" Type="datetime" />
+        </EntityType>
+        <EntityType Name="GENERO_MASCOTA">
+          <Key>
+            <PropertyRef Name="ID_GENERO" />
+          </Key>
+          <Property Name="ID_GENERO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GENERO" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="LISTA_NEGRA">
+          <Key>
+            <PropertyRef Name="ID_LISTA" />
+          </Key>
+          <Property Name="ID_LISTA" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LISTA_NEGRA" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="MASCOTA">
+          <Key>
+            <PropertyRef Name="ID_MASCOTA" />
+          </Key>
+          <Property Name="ID_MASCOTA" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_COMUNA" Type="bigint" Nullable="false" />
+          <Property Name="ID_TIPOM" Type="bigint" />
+          <Property Name="ID_GENERO" Type="bigint" />
+          <Property Name="NICK_MASCOTA" Type="varchar" MaxLength="30" />
+          <Property Name="TAMANO" Type="varchar" MaxLength="50" />
+          <Property Name="FOTO_M1" Type="varbinary" MaxLength="100" />
+          <Property Name="FOTO_M2" Type="varbinary" MaxLength="100" />
+          <Property Name="FOTO_M3" Type="varbinary" MaxLength="100" />
+          <Property Name="USER_CREAR_MASCOTA" Type="varchar" MaxLength="40" />
+          <Property Name="USER_ELIMINAR_MASCOTA" Type="varchar" MaxLength="40" />
+          <Property Name="USER_ACTUALIZAR_MASCOTA" Type="varchar" MaxLength="40" />
+          <Property Name="USER_CREAR_FMASC" Type="datetime" />
+          <Property Name="USER_ELIMINAR_FMASC" Type="datetime" />
+          <Property Name="USER_ACTUALIZAR_FMASC" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MASCOTA_ABANDONADA">
+          <Key>
+            <PropertyRef Name="ID_ABANDONADO" />
+          </Key>
+          <Property Name="ID_ABANDONADO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_UBICACION" Type="bigint" />
+          <Property Name="ID_PERSONA" Type="bigint" Nullable="false" />
+          <Property Name="ID_TIPOM" Type="bigint" />
+          <Property Name="ID_GENERO" Type="bigint" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="200" />
+          <Property Name="FOTO_MA1" Type="varbinary" MaxLength="50" />
+          <Property Name="FOTO_MA2" Type="varbinary" MaxLength="50" />
+          <Property Name="FOTO_MA3" Type="varbinary" MaxLength="50" />
+          <Property Name="USER_CREAR_AB" Type="varchar" MaxLength="40" />
+          <Property Name="USER_ELIMINAR_AB" Type="varchar" MaxLength="40" />
+          <Property Name="USER_ACTUALIZAR_AB" Type="varchar" MaxLength="40" />
+          <Property Name="USER_CREAR_FAB" Type="datetime" />
+          <Property Name="USER_ELIMINAR_FAB" Type="datetime" />
+          <Property Name="USER_ACTUALIZAR_FAB" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PAISES">
+          <Key>
+            <PropertyRef Name="ID_PAIS" />
+          </Key>
+          <Property Name="ID_PAIS" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PAIS" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PERSONA">
+          <Key>
+            <PropertyRef Name="ID_PERSONA" />
+          </Key>
+          <Property Name="ID_PERSONA" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_TPERSONA" Type="bigint" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="30" />
+          <Property Name="AP_PATERNO" Type="varchar" MaxLength="20" />
+          <Property Name="AP_MATERNO" Type="varchar" MaxLength="20" />
+          <Property Name="TELEFONO" Type="varchar" MaxLength="30" />
+          <Property Name="USUARIO" Type="varchar" MaxLength="50" />
+          <Property Name="PASSWORD" Type="char" MaxLength="32" />
+          <Property Name="USER_CREAR_P" Type="varchar" MaxLength="40" />
+          <Property Name="PER_ELIMINAR" Type="varchar" MaxLength="40" />
+          <Property Name="PER_ACTUALIZAR" Type="varchar" MaxLength="40" />
+          <Property Name="FPER_CREAR" Type="datetime" />
+          <Property Name="FPER_ELIMINAR" Type="datetime" />
+          <Property Name="FPER_ACTUALIZAR" Type="datetime" />
+        </EntityType>
+        <EntityType Name="REGIONES">
+          <Key>
+            <PropertyRef Name="ID_REGION" />
+          </Key>
+          <Property Name="ID_REGION" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_PAIS" Type="bigint" Nullable="false" />
+          <Property Name="REGION" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="REGISTRO_ADOPCION">
+          <Key>
+            <PropertyRef Name="ID_REGISTRO" />
+          </Key>
+          <Property Name="ID_REGISTRO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_MASCOTA" Type="bigint" />
+          <Property Name="ID_PERSONA" Type="bigint" />
+        </EntityType>
+        <EntityType Name="REGISTRO_DONACION">
+          <Key>
+            <PropertyRef Name="ID_REGISTRO" />
+          </Key>
+          <Property Name="ID_REGISTRO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_SOLICITUD" Type="bigint" />
+          <Property Name="ID_PER_DONACION" Type="bigint" />
+          <Property Name="MONTO" Type="int" />
+        </EntityType>
+        <EntityType Name="SEGUIMIENTO_ADOPCION">
+          <Key>
+            <PropertyRef Name="ID_SEGUIMIENTO" />
+          </Key>
+          <Property Name="ID_SEGUIMIENTO" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_PERSONA" Type="bigint" />
+          <Property Name="ID_AD" Type="bigint" />
+        </EntityType>
+        <EntityType Name="SOLICITUD_DONACIONES">
+          <Key>
+            <PropertyRef Name="ID_SOLICITUD" />
+          </Key>
+          <Property Name="ID_SOLICITUD" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SOLICITUD1" Type="bigint" />
+          <Property Name="SOLICITUD2" Type="bigint" />
+          <Property Name="FOTO_BOLETA1" Type="varbinary" MaxLength="50" />
+          <Property Name="FOTO_BOLETA2" Type="varbinary" MaxLength="50" />
+          <Property Name="ESTADO" Type="bit" />
+          <Property Name="USER_CREAR_SD" Type="varchar" MaxLength="40" />
+          <Property Name="USER_ELIMINAR_SD" Type="varchar" MaxLength="40" />
+          <Property Name="USER_ACTUALIZAR_SD" Type="varchar" MaxLength="40" />
+          <Property Name="USER_CREAR_FSD" Type="datetime" />
+          <Property Name="USER_ELIMINAR_FSD" Type="datetime" />
+          <Property Name="USER_ACTUALIZAR_FSD" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TIPO_DONACION">
+          <Key>
+            <PropertyRef Name="ID_TIPOD" />
+          </Key>
+          <Property Name="ID_TIPOD" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TIPO" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TIPO_MASCOTA">
+          <Key>
+            <PropertyRef Name="ID_TIPOM" />
+          </Key>
+          <Property Name="ID_TIPOM" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TIPO_M" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TIPO_PERSONA">
+          <Key>
+            <PropertyRef Name="ID_TPERSONA" />
+          </Key>
+          <Property Name="ID_TPERSONA" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TIPO_PERSONA" Type="varchar" MaxLength="50" />
+          <Property Name="USER_CREAR_TP" Type="varchar" MaxLength="40" />
+          <Property Name="USER_ELIMINAR_TP" Type="varchar" MaxLength="40" />
+          <Property Name="USER_ACTUALIZAR_TP" Type="varchar" MaxLength="40" />
+          <Property Name="USER_CREAR_FTP" Type="datetime" />
+          <Property Name="USER_ELIMINAR_FTP" Type="datetime" />
+          <Property Name="USER_ACTUALIZAR_FTP" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UBICACION_MASCOTA">
+          <Key>
+            <PropertyRef Name="ID_UBICACION" />
+          </Key>
+          <Property Name="ID_UBICACION" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LATITUD" Type="float" />
+          <Property Name="LONGITUD" Type="float" />
+          <Property Name="UBICACION" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="USUARIO_LISTA">
+          <Key>
+            <PropertyRef Name="ID_USUARIOS_LISTA" />
+          </Key>
+          <Property Name="ID_USUARIOS_LISTA" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_LISTA" Type="bigint" />
+          <Property Name="ID_PERSONA" Type="bigint" />
+        </EntityType>
+        <Association Name="FK_CIUDADES_RELATIONS_REGIONES">
+          <End Role="REGIONES" Type="Self.REGIONES" Multiplicity="1" />
+          <End Role="CIUDADES" Type="Self.CIUDADES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REGIONES">
+              <PropertyRef Name="ID_REGION" />
+            </Principal>
+            <Dependent Role="CIUDADES">
+              <PropertyRef Name="ID_REGION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COMUNAS_CIUDAD_CO_CIUDADES">
+          <End Role="CIUDADES" Type="Self.CIUDADES" Multiplicity="1" />
+          <End Role="COMUNAS" Type="Self.COMUNAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CIUDADES">
+              <PropertyRef Name="ID_CIUDAD" />
+            </Principal>
+            <Dependent Role="COMUNAS">
+              <PropertyRef Name="ID_CIUDAD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DAR_ADOPCION_MASCOTA">
+          <End Role="MASCOTA" Type="Self.MASCOTA" Multiplicity="1" />
+          <End Role="ADOPTAR_MASCOTA" Type="Self.ADOPTAR_MASCOTA" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="MASCOTA">
+              <PropertyRef Name="ID_MASCOTA" />
+            </Principal>
+            <Dependent Role="ADOPTAR_MASCOTA">
+              <PropertyRef Name="ID_AD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DONACION_RELATIONS_TIPO_DON">
+          <End Role="TIPO_DONACION" Type="Self.TIPO_DONACION" Multiplicity="0..1" />
+          <End Role="DONACIONES" Type="Self.DONACIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_DONACION">
+              <PropertyRef Name="ID_TIPOD" />
+            </Principal>
+            <Dependent Role="DONACIONES">
+              <PropertyRef Name="ID_TIPOD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MASCOTA__RELATIONS_GENERO_M">
+          <End Role="GENERO_MASCOTA" Type="Self.GENERO_MASCOTA" Multiplicity="0..1" />
+          <End Role="MASCOTA_ABANDONADA" Type="Self.MASCOTA_ABANDONADA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GENERO_MASCOTA">
+              <PropertyRef Name="ID_GENERO" />
+            </Principal>
+            <Dependent Role="MASCOTA_ABANDONADA">
+              <PropertyRef Name="ID_GENERO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MASCOTA__RELATIONS_PERSONA">
+          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="1" />
+          <End Role="MASCOTA_ABANDONADA" Type="Self.MASCOTA_ABANDONADA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="ID_PERSONA" />
+            </Principal>
+            <Dependent Role="MASCOTA_ABANDONADA">
+              <PropertyRef Name="ID_PERSONA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MASCOTA__RELATIONS_TIPO_MAS">
+          <End Role="TIPO_MASCOTA" Type="Self.TIPO_MASCOTA" Multiplicity="0..1" />
+          <End Role="MASCOTA_ABANDONADA" Type="Self.MASCOTA_ABANDONADA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_MASCOTA">
+              <PropertyRef Name="ID_TIPOM" />
+            </Principal>
+            <Dependent Role="MASCOTA_ABANDONADA">
+              <PropertyRef Name="ID_TIPOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MASCOTA__RELATIONS_UBICACIO">
+          <End Role="UBICACION_MASCOTA" Type="Self.UBICACION_MASCOTA" Multiplicity="0..1" />
+          <End Role="MASCOTA_ABANDONADA" Type="Self.MASCOTA_ABANDONADA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UBICACION_MASCOTA">
+              <PropertyRef Name="ID_UBICACION" />
+            </Principal>
+            <Dependent Role="MASCOTA_ABANDONADA">
+              <PropertyRef Name="ID_UBICACION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MASCOTA_RELATIONS_COMUNAS">
+          <End Role="COMUNAS" Type="Self.COMUNAS" Multiplicity="1" />
+          <End Role="MASCOTA" Type="Self.MASCOTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMUNAS">
+              <PropertyRef Name="ID_COMUNA" />
+            </Principal>
+            <Dependent Role="MASCOTA">
+              <PropertyRef Name="ID_COMUNA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MASCOTA_RELATIONS_GENERO_M">
+          <End Role="GENERO_MASCOTA" Type="Self.GENERO_MASCOTA" Multiplicity="0..1" />
+          <End Role="MASCOTA" Type="Self.MASCOTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GENERO_MASCOTA">
+              <PropertyRef Name="ID_GENERO" />
+            </Principal>
+            <Dependent Role="MASCOTA">
+              <PropertyRef Name="ID_GENERO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MASCOTA_RELATIONS_TIPO_MAS">
+          <End Role="TIPO_MASCOTA" Type="Self.TIPO_MASCOTA" Multiplicity="0..1" />
+          <End Role="MASCOTA" Type="Self.MASCOTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_MASCOTA">
+              <PropertyRef Name="ID_TIPOM" />
+            </Principal>
+            <Dependent Role="MASCOTA">
+              <PropertyRef Name="ID_TIPOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSONA_RELATIONS_TIPO_PER">
+          <End Role="TIPO_PERSONA" Type="Self.TIPO_PERSONA" Multiplicity="0..1" />
+          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_PERSONA">
+              <PropertyRef Name="ID_TPERSONA" />
+            </Principal>
+            <Dependent Role="PERSONA">
+              <PropertyRef Name="ID_TPERSONA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REGIONES_RELATIONS_PAISES">
+          <End Role="PAISES" Type="Self.PAISES" Multiplicity="1" />
+          <End Role="REGIONES" Type="Self.REGIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAISES">
+              <PropertyRef Name="ID_PAIS" />
+            </Principal>
+            <Dependent Role="REGIONES">
+              <PropertyRef Name="ID_PAIS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REGISTRO_ADOPCION_MASCOTA">
+          <End Role="MASCOTA" Type="Self.MASCOTA" Multiplicity="1" />
+          <End Role="REGISTRO_ADOPCION" Type="Self.REGISTRO_ADOPCION" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="MASCOTA">
+              <PropertyRef Name="ID_MASCOTA" />
+            </Principal>
+            <Dependent Role="REGISTRO_ADOPCION">
+              <PropertyRef Name="ID_REGISTRO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REGISTRO_ADOPCION_PERSONA">
+          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="1" />
+          <End Role="REGISTRO_ADOPCION" Type="Self.REGISTRO_ADOPCION" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="ID_PERSONA" />
+            </Principal>
+            <Dependent Role="REGISTRO_ADOPCION">
+              <PropertyRef Name="ID_REGISTRO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REGISTRO_DONACION_PERSONA">
+          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="0..1" />
+          <End Role="REGISTRO_DONACION" Type="Self.REGISTRO_DONACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="ID_PERSONA" />
+            </Principal>
+            <Dependent Role="REGISTRO_DONACION">
+              <PropertyRef Name="ID_SOLICITUD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REGISTRO_DONACION_SOLICITUD_DONACIONES">
+          <End Role="SOLICITUD_DONACIONES" Type="Self.SOLICITUD_DONACIONES" Multiplicity="0..1" />
+          <End Role="REGISTRO_DONACION" Type="Self.REGISTRO_DONACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SOLICITUD_DONACIONES">
+              <PropertyRef Name="ID_SOLICITUD" />
+            </Principal>
+            <Dependent Role="REGISTRO_DONACION">
+              <PropertyRef Name="ID_PER_DONACION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SEGUIMIENTO_ADOPCION_DAR_ADOPCION">
+          <End Role="ADOPTAR_MASCOTA" Type="Self.ADOPTAR_MASCOTA" Multiplicity="0..1" />
+          <End Role="SEGUIMIENTO_ADOPCION" Type="Self.SEGUIMIENTO_ADOPCION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADOPTAR_MASCOTA">
+              <PropertyRef Name="ID_AD" />
+            </Principal>
+            <Dependent Role="SEGUIMIENTO_ADOPCION">
+              <PropertyRef Name="ID_AD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SEGUIMIENTO_ADOPCION_PERSONA">
+          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="0..1" />
+          <End Role="SEGUIMIENTO_ADOPCION" Type="Self.SEGUIMIENTO_ADOPCION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="ID_PERSONA" />
+            </Principal>
+            <Dependent Role="SEGUIMIENTO_ADOPCION">
+              <PropertyRef Name="ID_PERSONA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SOLICITUD_DONACIONES_PERSONA">
+          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="0..1" />
+          <End Role="SOLICITUD_DONACIONES" Type="Self.SOLICITUD_DONACIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="ID_PERSONA" />
+            </Principal>
+            <Dependent Role="SOLICITUD_DONACIONES">
+              <PropertyRef Name="SOLICITUD1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USURIOS_LISTA_LISTA_NEGRA">
+          <End Role="LISTA_NEGRA" Type="Self.LISTA_NEGRA" Multiplicity="0..1" />
+          <End Role="USUARIO_LISTA" Type="Self.USUARIO_LISTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LISTA_NEGRA">
+              <PropertyRef Name="ID_LISTA" />
+            </Principal>
+            <Dependent Role="USUARIO_LISTA">
+              <PropertyRef Name="ID_LISTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USURIOS_LISTA_PERSONA">
+          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="0..1" />
+          <End Role="USUARIO_LISTA" Type="Self.USUARIO_LISTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="ID_PERSONA" />
+            </Principal>
+            <Dependent Role="USUARIO_LISTA">
+              <PropertyRef Name="ID_PERSONA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="opemascotasModelStoreContainer">
+          <EntitySet Name="ADOPTAR_MASCOTA" EntityType="Self.ADOPTAR_MASCOTA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CIUDADES" EntityType="Self.CIUDADES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="COMUNAS" EntityType="Self.COMUNAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DONACIONES" EntityType="Self.DONACIONES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GENERO_MASCOTA" EntityType="Self.GENERO_MASCOTA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LISTA_NEGRA" EntityType="Self.LISTA_NEGRA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MASCOTA" EntityType="Self.MASCOTA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MASCOTA_ABANDONADA" EntityType="Self.MASCOTA_ABANDONADA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PAISES" EntityType="Self.PAISES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PERSONA" EntityType="Self.PERSONA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="REGIONES" EntityType="Self.REGIONES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="REGISTRO_ADOPCION" EntityType="Self.REGISTRO_ADOPCION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="REGISTRO_DONACION" EntityType="Self.REGISTRO_DONACION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SEGUIMIENTO_ADOPCION" EntityType="Self.SEGUIMIENTO_ADOPCION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SOLICITUD_DONACIONES" EntityType="Self.SOLICITUD_DONACIONES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TIPO_DONACION" EntityType="Self.TIPO_DONACION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TIPO_MASCOTA" EntityType="Self.TIPO_MASCOTA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TIPO_PERSONA" EntityType="Self.TIPO_PERSONA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UBICACION_MASCOTA" EntityType="Self.UBICACION_MASCOTA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USUARIO_LISTA" EntityType="Self.USUARIO_LISTA" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CIUDADES_RELATIONS_REGIONES" Association="Self.FK_CIUDADES_RELATIONS_REGIONES">
+            <End Role="REGIONES" EntitySet="REGIONES" />
+            <End Role="CIUDADES" EntitySet="CIUDADES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COMUNAS_CIUDAD_CO_CIUDADES" Association="Self.FK_COMUNAS_CIUDAD_CO_CIUDADES">
+            <End Role="CIUDADES" EntitySet="CIUDADES" />
+            <End Role="COMUNAS" EntitySet="COMUNAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DAR_ADOPCION_MASCOTA" Association="Self.FK_DAR_ADOPCION_MASCOTA">
+            <End Role="MASCOTA" EntitySet="MASCOTA" />
+            <End Role="ADOPTAR_MASCOTA" EntitySet="ADOPTAR_MASCOTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DONACION_RELATIONS_TIPO_DON" Association="Self.FK_DONACION_RELATIONS_TIPO_DON">
+            <End Role="TIPO_DONACION" EntitySet="TIPO_DONACION" />
+            <End Role="DONACIONES" EntitySet="DONACIONES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MASCOTA__RELATIONS_GENERO_M" Association="Self.FK_MASCOTA__RELATIONS_GENERO_M">
+            <End Role="GENERO_MASCOTA" EntitySet="GENERO_MASCOTA" />
+            <End Role="MASCOTA_ABANDONADA" EntitySet="MASCOTA_ABANDONADA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MASCOTA__RELATIONS_PERSONA" Association="Self.FK_MASCOTA__RELATIONS_PERSONA">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="MASCOTA_ABANDONADA" EntitySet="MASCOTA_ABANDONADA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MASCOTA__RELATIONS_TIPO_MAS" Association="Self.FK_MASCOTA__RELATIONS_TIPO_MAS">
+            <End Role="TIPO_MASCOTA" EntitySet="TIPO_MASCOTA" />
+            <End Role="MASCOTA_ABANDONADA" EntitySet="MASCOTA_ABANDONADA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MASCOTA__RELATIONS_UBICACIO" Association="Self.FK_MASCOTA__RELATIONS_UBICACIO">
+            <End Role="UBICACION_MASCOTA" EntitySet="UBICACION_MASCOTA" />
+            <End Role="MASCOTA_ABANDONADA" EntitySet="MASCOTA_ABANDONADA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MASCOTA_RELATIONS_COMUNAS" Association="Self.FK_MASCOTA_RELATIONS_COMUNAS">
+            <End Role="COMUNAS" EntitySet="COMUNAS" />
+            <End Role="MASCOTA" EntitySet="MASCOTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MASCOTA_RELATIONS_GENERO_M" Association="Self.FK_MASCOTA_RELATIONS_GENERO_M">
+            <End Role="GENERO_MASCOTA" EntitySet="GENERO_MASCOTA" />
+            <End Role="MASCOTA" EntitySet="MASCOTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MASCOTA_RELATIONS_TIPO_MAS" Association="Self.FK_MASCOTA_RELATIONS_TIPO_MAS">
+            <End Role="TIPO_MASCOTA" EntitySet="TIPO_MASCOTA" />
+            <End Role="MASCOTA" EntitySet="MASCOTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSONA_RELATIONS_TIPO_PER" Association="Self.FK_PERSONA_RELATIONS_TIPO_PER">
+            <End Role="TIPO_PERSONA" EntitySet="TIPO_PERSONA" />
+            <End Role="PERSONA" EntitySet="PERSONA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REGIONES_RELATIONS_PAISES" Association="Self.FK_REGIONES_RELATIONS_PAISES">
+            <End Role="PAISES" EntitySet="PAISES" />
+            <End Role="REGIONES" EntitySet="REGIONES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REGISTRO_ADOPCION_MASCOTA" Association="Self.FK_REGISTRO_ADOPCION_MASCOTA">
+            <End Role="MASCOTA" EntitySet="MASCOTA" />
+            <End Role="REGISTRO_ADOPCION" EntitySet="REGISTRO_ADOPCION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REGISTRO_ADOPCION_PERSONA" Association="Self.FK_REGISTRO_ADOPCION_PERSONA">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="REGISTRO_ADOPCION" EntitySet="REGISTRO_ADOPCION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REGISTRO_DONACION_PERSONA" Association="Self.FK_REGISTRO_DONACION_PERSONA">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="REGISTRO_DONACION" EntitySet="REGISTRO_DONACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REGISTRO_DONACION_SOLICITUD_DONACIONES" Association="Self.FK_REGISTRO_DONACION_SOLICITUD_DONACIONES">
+            <End Role="SOLICITUD_DONACIONES" EntitySet="SOLICITUD_DONACIONES" />
+            <End Role="REGISTRO_DONACION" EntitySet="REGISTRO_DONACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SEGUIMIENTO_ADOPCION_DAR_ADOPCION" Association="Self.FK_SEGUIMIENTO_ADOPCION_DAR_ADOPCION">
+            <End Role="ADOPTAR_MASCOTA" EntitySet="ADOPTAR_MASCOTA" />
+            <End Role="SEGUIMIENTO_ADOPCION" EntitySet="SEGUIMIENTO_ADOPCION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SEGUIMIENTO_ADOPCION_PERSONA" Association="Self.FK_SEGUIMIENTO_ADOPCION_PERSONA">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="SEGUIMIENTO_ADOPCION" EntitySet="SEGUIMIENTO_ADOPCION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SOLICITUD_DONACIONES_PERSONA" Association="Self.FK_SOLICITUD_DONACIONES_PERSONA">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="SOLICITUD_DONACIONES" EntitySet="SOLICITUD_DONACIONES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USURIOS_LISTA_LISTA_NEGRA" Association="Self.FK_USURIOS_LISTA_LISTA_NEGRA">
+            <End Role="LISTA_NEGRA" EntitySet="LISTA_NEGRA" />
+            <End Role="USUARIO_LISTA" EntitySet="USUARIO_LISTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USURIOS_LISTA_PERSONA" Association="Self.FK_USURIOS_LISTA_PERSONA">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="USUARIO_LISTA" EntitySet="USUARIO_LISTA" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="opemascotasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ADOPTAR_MASCOTA">
+          <Key>
+            <PropertyRef Name="ID_AD" />
+          </Key>
+          <Property Name="ID_AD" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_MASCOTA" Type="Int64" />
+          <Property Name="ADOPTADO" Type="Boolean" />
+          <Property Name="USER_CREAR_AD" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="USER_ELIMINAR_AD" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="USER_ACTUALIZAR_AD" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="USER_CREAR_FAD" Type="DateTime" Precision="3" />
+          <Property Name="USER_ELIMINAR_FAD" Type="DateTime" Precision="3" />
+          <Property Name="USER_ACTUALIZAR_FAD" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="MASCOTA" Relationship="Self.FK_DAR_ADOPCION_MASCOTA" FromRole="ADOPTAR_MASCOTA" ToRole="MASCOTA" />
+          <NavigationProperty Name="SEGUIMIENTO_ADOPCION" Relationship="Self.FK_SEGUIMIENTO_ADOPCION_DAR_ADOPCION" FromRole="ADOPTAR_MASCOTA" ToRole="SEGUIMIENTO_ADOPCION" />
+        </EntityType>
+        <EntityType Name="CIUDADES">
+          <Key>
+            <PropertyRef Name="ID_CIUDAD" />
+          </Key>
+          <Property Name="ID_CIUDAD" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_REGION" Type="Int64" Nullable="false" />
+          <Property Name="CIUDAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="REGIONES" Relationship="Self.FK_CIUDADES_RELATIONS_REGIONES" FromRole="CIUDADES" ToRole="REGIONES" />
+          <NavigationProperty Name="COMUNAS" Relationship="Self.FK_COMUNAS_CIUDAD_CO_CIUDADES" FromRole="CIUDADES" ToRole="COMUNAS" />
+        </EntityType>
+        <EntityType Name="COMUNAS">
+          <Key>
+            <PropertyRef Name="ID_COMUNA" />
+          </Key>
+          <Property Name="ID_COMUNA" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_CIUDAD" Type="Int64" Nullable="false" />
+          <Property Name="COMUNA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CIUDADES" Relationship="Self.FK_COMUNAS_CIUDAD_CO_CIUDADES" FromRole="COMUNAS" ToRole="CIUDADES" />
+          <NavigationProperty Name="MASCOTA" Relationship="Self.FK_MASCOTA_RELATIONS_COMUNAS" FromRole="COMUNAS" ToRole="MASCOTA" />
+        </EntityType>
+        <EntityType Name="DONACIONES">
+          <Key>
+            <PropertyRef Name="ID_DONAR" />
+          </Key>
+          <Property Name="ID_DONAR" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_TIPOD" Type="Int64" />
+          <Property Name="ID_PERSONA" Type="Int64" Nullable="false" />
+          <Property Name="FOTO_BOLETA" Type="Binary" MaxLength="100" FixedLength="false" />
+          <Property Name="FOTO_BOLETA2" Type="Binary" MaxLength="100" FixedLength="false" />
+          <Property Name="FOTO_BOLETA3" Type="Binary" MaxLength="100" FixedLength="false" />
+          <Property Name="USER_CREAR_DN" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="USER_ELIMINAR_DN" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="USER_ACTUALIZAR_DN" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="USER_CREAR_FDN" Type="DateTime" Precision="3" />
+          <Property Name="USER_ELIMINAR_FDN" Type="DateTime" Precision="3" />
+          <Property Name="USER_ACTUALIZAR_FDN" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="TIPO_DONACION" Relationship="Self.FK_DONACION_RELATIONS_TIPO_DON" FromRole="DONACIONES" ToRole="TIPO_DONACION" />
+        </EntityType>
+        <EntityType Name="GENERO_MASCOTA">
+          <Key>
+            <PropertyRef Name="ID_GENERO" />
+          </Key>
+          <Property Name="ID_GENERO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GENERO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MASCOTA_ABANDONADA" Relationship="Self.FK_MASCOTA__RELATIONS_GENERO_M" FromRole="GENERO_MASCOTA" ToRole="MASCOTA_ABANDONADA" />
+          <NavigationProperty Name="MASCOTA" Relationship="Self.FK_MASCOTA_RELATIONS_GENERO_M" FromRole="GENERO_MASCOTA" ToRole="MASCOTA" />
+        </EntityType>
+        <EntityType Name="LISTA_NEGRA">
+          <Key>
+            <PropertyRef Name="ID_LISTA" />
+          </Key>
+          <Property Name="ID_LISTA" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LISTA_NEGRA1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="USUARIO_LISTA" Relationship="Self.FK_USURIOS_LISTA_LISTA_NEGRA" FromRole="LISTA_NEGRA" ToRole="USUARIO_LISTA" />
+        </EntityType>
+        <EntityType Name="MASCOTA">
+          <Key>
+            <PropertyRef Name="ID_MASCOTA" />
+          </Key>
+          <Property Name="ID_MASCOTA" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_COMUNA" Type="Int64" Nullable="false" />
+          <Property Name="ID_TIPOM" Type="Int64" />
+          <Property Name="ID_GENERO" Type="Int64" />
+          <Property Name="NICK_MASCOTA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TAMANO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FOTO_M1" Type="Binary" MaxLength="100" FixedLength="false" />
+          <Property Name="FOTO_M2" Type="Binary" MaxLength="100" FixedLength="false" />
+          <Property Name="FOTO_M3" Type="Binary" MaxLength="100" FixedLength="false" />
+          <Property Name="USER_CREAR_MASCOTA" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="USER_ELIMINAR_MASCOTA" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="USER_ACTUALIZAR_MASCOTA" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="USER_CREAR_FMASC" Type="DateTime" Precision="3" />
+          <Property Name="USER_ELIMINAR_FMASC" Type="DateTime" Precision="3" />
+          <Property Name="USER_ACTUALIZAR_FMASC" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ADOPTAR_MASCOTA" Relationship="Self.FK_DAR_ADOPCION_MASCOTA" FromRole="MASCOTA" ToRole="ADOPTAR_MASCOTA" />
+          <NavigationProperty Name="COMUNAS" Relationship="Self.FK_MASCOTA_RELATIONS_COMUNAS" FromRole="MASCOTA" ToRole="COMUNAS" />
+          <NavigationProperty Name="GENERO_MASCOTA" Relationship="Self.FK_MASCOTA_RELATIONS_GENERO_M" FromRole="MASCOTA" ToRole="GENERO_MASCOTA" />
+          <NavigationProperty Name="TIPO_MASCOTA" Relationship="Self.FK_MASCOTA_RELATIONS_TIPO_MAS" FromRole="MASCOTA" ToRole="TIPO_MASCOTA" />
+          <NavigationProperty Name="REGISTRO_ADOPCION" Relationship="Self.FK_REGISTRO_ADOPCION_MASCOTA" FromRole="MASCOTA" ToRole="REGISTRO_ADOPCION" />
+        </EntityType>
+        <EntityType Name="MASCOTA_ABANDONADA">
+          <Key>
+            <PropertyRef Name="ID_ABANDONADO" />
+          </Key>
+          <Property Name="ID_ABANDONADO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_UBICACION" Type="Int64" />
+          <Property Name="ID_PERSONA" Type="Int64" Nullable="false" />
+          <Property Name="ID_TIPOM" Type="Int64" />
+          <Property Name="ID_GENERO" Type="Int64" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="FOTO_MA1" Type="Binary" MaxLength="50" FixedLength="false" />
+          <Property Name="FOTO_MA2" Type="Binary" MaxLength="50" FixedLength="false" />
+          <Property Name="FOTO_MA3" Type="Binary" MaxLength="50" FixedLength="false" />
+          <Property Name="USER_CREAR_AB" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="USER_ELIMINAR_AB" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="USER_ACTUALIZAR_AB" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="USER_CREAR_FAB" Type="DateTime" Precision="3" />
+          <Property Name="USER_ELIMINAR_FAB" Type="DateTime" Precision="3" />
+          <Property Name="USER_ACTUALIZAR_FAB" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="GENERO_MASCOTA" Relationship="Self.FK_MASCOTA__RELATIONS_GENERO_M" FromRole="MASCOTA_ABANDONADA" ToRole="GENERO_MASCOTA" />
+          <NavigationProperty Name="PERSONA" Relationship="Self.FK_MASCOTA__RELATIONS_PERSONA" FromRole="MASCOTA_ABANDONADA" ToRole="PERSONA" />
+          <NavigationProperty Name="TIPO_MASCOTA" Relationship="Self.FK_MASCOTA__RELATIONS_TIPO_MAS" FromRole="MASCOTA_ABANDONADA" ToRole="TIPO_MASCOTA" />
+          <NavigationProperty Name="UBICACION_MASCOTA" Relationship="Self.FK_MASCOTA__RELATIONS_UBICACIO" FromRole="MASCOTA_ABANDONADA" ToRole="UBICACION_MASCOTA" />
+        </EntityType>
+        <EntityType Name="PAISES">
+          <Key>
+            <PropertyRef Name="ID_PAIS" />
+          </Key>
+          <Property Name="ID_PAIS" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PAIS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="REGIONES" Relationship="Self.FK_REGIONES_RELATIONS_PAISES" FromRole="PAISES" ToRole="REGIONES" />
+        </EntityType>
+        <EntityType Name="PERSONA">
+          <Key>
+            <PropertyRef Name="ID_PERSONA" />
+          </Key>
+          <Property Name="ID_PERSONA" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_TPERSONA" Type="Int64" />
+          <Property Name="NOMBRE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="AP_PATERNO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="AP_MATERNO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="USUARIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="USER_CREAR_P" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="PER_ELIMINAR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="PER_ACTUALIZAR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="FPER_CREAR" Type="DateTime" Precision="3" />
+          <Property Name="FPER_ELIMINAR" Type="DateTime" Precision="3" />
+          <Property Name="FPER_ACTUALIZAR" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="MASCOTA_ABANDONADA" Relationship="Self.FK_MASCOTA__RELATIONS_PERSONA" FromRole="PERSONA" ToRole="MASCOTA_ABANDONADA" />
+          <NavigationProperty Name="TIPO_PERSONA" Relationship="Self.FK_PERSONA_RELATIONS_TIPO_PER" FromRole="PERSONA" ToRole="TIPO_PERSONA" />
+          <NavigationProperty Name="REGISTRO_ADOPCION" Relationship="Self.FK_REGISTRO_ADOPCION_PERSONA" FromRole="PERSONA" ToRole="REGISTRO_ADOPCION" />
+          <NavigationProperty Name="REGISTRO_DONACION" Relationship="Self.FK_REGISTRO_DONACION_PERSONA" FromRole="PERSONA" ToRole="REGISTRO_DONACION" />
+          <NavigationProperty Name="SEGUIMIENTO_ADOPCION" Relationship="Self.FK_SEGUIMIENTO_ADOPCION_PERSONA" FromRole="PERSONA" ToRole="SEGUIMIENTO_ADOPCION" />
+          <NavigationProperty Name="SOLICITUD_DONACIONES" Relationship="Self.FK_SOLICITUD_DONACIONES_PERSONA" FromRole="PERSONA" ToRole="SOLICITUD_DONACIONES" />
+          <NavigationProperty Name="USUARIO_LISTA" Relationship="Self.FK_USURIOS_LISTA_PERSONA" FromRole="PERSONA" ToRole="USUARIO_LISTA" />
+        </EntityType>
+        <EntityType Name="REGIONES">
+          <Key>
+            <PropertyRef Name="ID_REGION" />
+          </Key>
+          <Property Name="ID_REGION" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_PAIS" Type="Int64" Nullable="false" />
+          <Property Name="REGION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CIUDADES" Relationship="Self.FK_CIUDADES_RELATIONS_REGIONES" FromRole="REGIONES" ToRole="CIUDADES" />
+          <NavigationProperty Name="PAISES" Relationship="Self.FK_REGIONES_RELATIONS_PAISES" FromRole="REGIONES" ToRole="PAISES" />
+        </EntityType>
+        <EntityType Name="REGISTRO_ADOPCION">
+          <Key>
+            <PropertyRef Name="ID_REGISTRO" />
+          </Key>
+          <Property Name="ID_REGISTRO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_MASCOTA" Type="Int64" />
+          <Property Name="ID_PERSONA" Type="Int64" />
+          <NavigationProperty Name="MASCOTA" Relationship="Self.FK_REGISTRO_ADOPCION_MASCOTA" FromRole="REGISTRO_ADOPCION" ToRole="MASCOTA" />
+          <NavigationProperty Name="PERSONA" Relationship="Self.FK_REGISTRO_ADOPCION_PERSONA" FromRole="REGISTRO_ADOPCION" ToRole="PERSONA" />
+        </EntityType>
+        <EntityType Name="REGISTRO_DONACION">
+          <Key>
+            <PropertyRef Name="ID_REGISTRO" />
+          </Key>
+          <Property Name="ID_REGISTRO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_SOLICITUD" Type="Int64" />
+          <Property Name="ID_PER_DONACION" Type="Int64" />
+          <Property Name="MONTO" Type="Int32" />
+          <NavigationProperty Name="PERSONA" Relationship="Self.FK_REGISTRO_DONACION_PERSONA" FromRole="REGISTRO_DONACION" ToRole="PERSONA" />
+          <NavigationProperty Name="SOLICITUD_DONACIONES" Relationship="Self.FK_REGISTRO_DONACION_SOLICITUD_DONACIONES" FromRole="REGISTRO_DONACION" ToRole="SOLICITUD_DONACIONES" />
+        </EntityType>
+        <EntityType Name="SEGUIMIENTO_ADOPCION">
+          <Key>
+            <PropertyRef Name="ID_SEGUIMIENTO" />
+          </Key>
+          <Property Name="ID_SEGUIMIENTO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_PERSONA" Type="Int64" />
+          <Property Name="ID_AD" Type="Int64" />
+          <NavigationProperty Name="ADOPTAR_MASCOTA" Relationship="Self.FK_SEGUIMIENTO_ADOPCION_DAR_ADOPCION" FromRole="SEGUIMIENTO_ADOPCION" ToRole="ADOPTAR_MASCOTA" />
+          <NavigationProperty Name="PERSONA" Relationship="Self.FK_SEGUIMIENTO_ADOPCION_PERSONA" FromRole="SEGUIMIENTO_ADOPCION" ToRole="PERSONA" />
+        </EntityType>
+        <EntityType Name="SOLICITUD_DONACIONES">
+          <Key>
+            <PropertyRef Name="ID_SOLICITUD" />
+          </Key>
+          <Property Name="ID_SOLICITUD" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SOLICITUD1" Type="Int64" />
+          <Property Name="SOLICITUD2" Type="Int64" />
+          <Property Name="FOTO_BOLETA1" Type="Binary" MaxLength="50" FixedLength="false" />
+          <Property Name="FOTO_BOLETA2" Type="Binary" MaxLength="50" FixedLength="false" />
+          <Property Name="ESTADO" Type="Boolean" />
+          <Property Name="USER_CREAR_SD" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="USER_ELIMINAR_SD" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="USER_ACTUALIZAR_SD" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="USER_CREAR_FSD" Type="DateTime" Precision="3" />
+          <Property Name="USER_ELIMINAR_FSD" Type="DateTime" Precision="3" />
+          <Property Name="USER_ACTUALIZAR_FSD" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="PERSONA" Relationship="Self.FK_SOLICITUD_DONACIONES_PERSONA" FromRole="SOLICITUD_DONACIONES" ToRole="PERSONA" />
+          <NavigationProperty Name="REGISTRO_DONACION" Relationship="Self.FK_REGISTRO_DONACION_SOLICITUD_DONACIONES" FromRole="SOLICITUD_DONACIONES" ToRole="REGISTRO_DONACION" />
+        </EntityType>
+        <EntityType Name="TIPO_DONACION">
+          <Key>
+            <PropertyRef Name="ID_TIPOD" />
+          </Key>
+          <Property Name="ID_TIPOD" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TIPO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DONACIONES" Relationship="Self.FK_DONACION_RELATIONS_TIPO_DON" FromRole="TIPO_DONACION" ToRole="DONACIONES" />
+        </EntityType>
+        <EntityType Name="TIPO_MASCOTA">
+          <Key>
+            <PropertyRef Name="ID_TIPOM" />
+          </Key>
+          <Property Name="ID_TIPOM" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TIPO_M" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MASCOTA" Relationship="Self.FK_MASCOTA_RELATIONS_TIPO_MAS" FromRole="TIPO_MASCOTA" ToRole="MASCOTA" />
+          <NavigationProperty Name="MASCOTA_ABANDONADA" Relationship="Self.FK_MASCOTA__RELATIONS_TIPO_MAS" FromRole="TIPO_MASCOTA" ToRole="MASCOTA_ABANDONADA" />
+        </EntityType>
+        <EntityType Name="TIPO_PERSONA">
+          <Key>
+            <PropertyRef Name="ID_TPERSONA" />
+          </Key>
+          <Property Name="ID_TPERSONA" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TIPO_PERSONA1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="USER_CREAR_TP" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="USER_ELIMINAR_TP" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="USER_ACTUALIZAR_TP" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="USER_CREAR_FTP" Type="DateTime" Precision="3" />
+          <Property Name="USER_ELIMINAR_FTP" Type="DateTime" Precision="3" />
+          <Property Name="USER_ACTUALIZAR_FTP" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="PERSONA" Relationship="Self.FK_PERSONA_RELATIONS_TIPO_PER" FromRole="TIPO_PERSONA" ToRole="PERSONA" />
+        </EntityType>
+        <EntityType Name="UBICACION_MASCOTA">
+          <Key>
+            <PropertyRef Name="ID_UBICACION" />
+          </Key>
+          <Property Name="ID_UBICACION" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LATITUD" Type="Double" />
+          <Property Name="LONGITUD" Type="Double" />
+          <Property Name="UBICACION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MASCOTA_ABANDONADA" Relationship="Self.FK_MASCOTA__RELATIONS_UBICACIO" FromRole="UBICACION_MASCOTA" ToRole="MASCOTA_ABANDONADA" />
+        </EntityType>
+        <EntityType Name="USUARIO_LISTA">
+          <Key>
+            <PropertyRef Name="ID_USUARIOS_LISTA" />
+          </Key>
+          <Property Name="ID_USUARIOS_LISTA" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_LISTA" Type="Int64" />
+          <Property Name="ID_PERSONA" Type="Int64" />
+          <NavigationProperty Name="LISTA_NEGRA" Relationship="Self.FK_USURIOS_LISTA_LISTA_NEGRA" FromRole="USUARIO_LISTA" ToRole="LISTA_NEGRA" />
+          <NavigationProperty Name="PERSONA" Relationship="Self.FK_USURIOS_LISTA_PERSONA" FromRole="USUARIO_LISTA" ToRole="PERSONA" />
+        </EntityType>
+        <Association Name="FK_DAR_ADOPCION_MASCOTA">
+          <End Role="MASCOTA" Type="Self.MASCOTA" Multiplicity="1" />
+          <End Role="ADOPTAR_MASCOTA" Type="Self.ADOPTAR_MASCOTA" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="MASCOTA">
+              <PropertyRef Name="ID_MASCOTA" />
+            </Principal>
+            <Dependent Role="ADOPTAR_MASCOTA">
+              <PropertyRef Name="ID_AD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SEGUIMIENTO_ADOPCION_DAR_ADOPCION">
+          <End Role="ADOPTAR_MASCOTA" Type="Self.ADOPTAR_MASCOTA" Multiplicity="0..1" />
+          <End Role="SEGUIMIENTO_ADOPCION" Type="Self.SEGUIMIENTO_ADOPCION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADOPTAR_MASCOTA">
+              <PropertyRef Name="ID_AD" />
+            </Principal>
+            <Dependent Role="SEGUIMIENTO_ADOPCION">
+              <PropertyRef Name="ID_AD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CIUDADES_RELATIONS_REGIONES">
+          <End Role="REGIONES" Type="Self.REGIONES" Multiplicity="1" />
+          <End Role="CIUDADES" Type="Self.CIUDADES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REGIONES">
+              <PropertyRef Name="ID_REGION" />
+            </Principal>
+            <Dependent Role="CIUDADES">
+              <PropertyRef Name="ID_REGION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COMUNAS_CIUDAD_CO_CIUDADES">
+          <End Role="CIUDADES" Type="Self.CIUDADES" Multiplicity="1" />
+          <End Role="COMUNAS" Type="Self.COMUNAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CIUDADES">
+              <PropertyRef Name="ID_CIUDAD" />
+            </Principal>
+            <Dependent Role="COMUNAS">
+              <PropertyRef Name="ID_CIUDAD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MASCOTA_RELATIONS_COMUNAS">
+          <End Role="COMUNAS" Type="Self.COMUNAS" Multiplicity="1" />
+          <End Role="MASCOTA" Type="Self.MASCOTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMUNAS">
+              <PropertyRef Name="ID_COMUNA" />
+            </Principal>
+            <Dependent Role="MASCOTA">
+              <PropertyRef Name="ID_COMUNA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DONACION_RELATIONS_TIPO_DON">
+          <End Role="TIPO_DONACION" Type="Self.TIPO_DONACION" Multiplicity="0..1" />
+          <End Role="DONACIONES" Type="Self.DONACIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_DONACION">
+              <PropertyRef Name="ID_TIPOD" />
+            </Principal>
+            <Dependent Role="DONACIONES">
+              <PropertyRef Name="ID_TIPOD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MASCOTA__RELATIONS_GENERO_M">
+          <End Role="GENERO_MASCOTA" Type="Self.GENERO_MASCOTA" Multiplicity="0..1" />
+          <End Role="MASCOTA_ABANDONADA" Type="Self.MASCOTA_ABANDONADA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GENERO_MASCOTA">
+              <PropertyRef Name="ID_GENERO" />
+            </Principal>
+            <Dependent Role="MASCOTA_ABANDONADA">
+              <PropertyRef Name="ID_GENERO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MASCOTA_RELATIONS_GENERO_M">
+          <End Role="GENERO_MASCOTA" Type="Self.GENERO_MASCOTA" Multiplicity="0..1" />
+          <End Role="MASCOTA" Type="Self.MASCOTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GENERO_MASCOTA">
+              <PropertyRef Name="ID_GENERO" />
+            </Principal>
+            <Dependent Role="MASCOTA">
+              <PropertyRef Name="ID_GENERO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USURIOS_LISTA_LISTA_NEGRA">
+          <End Role="LISTA_NEGRA" Type="Self.LISTA_NEGRA" Multiplicity="0..1" />
+          <End Role="USUARIO_LISTA" Type="Self.USUARIO_LISTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LISTA_NEGRA">
+              <PropertyRef Name="ID_LISTA" />
+            </Principal>
+            <Dependent Role="USUARIO_LISTA">
+              <PropertyRef Name="ID_LISTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MASCOTA_RELATIONS_TIPO_MAS">
+          <End Role="TIPO_MASCOTA" Type="Self.TIPO_MASCOTA" Multiplicity="0..1" />
+          <End Role="MASCOTA" Type="Self.MASCOTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_MASCOTA">
+              <PropertyRef Name="ID_TIPOM" />
+            </Principal>
+            <Dependent Role="MASCOTA">
+              <PropertyRef Name="ID_TIPOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REGISTRO_ADOPCION_MASCOTA">
+          <End Role="MASCOTA" Type="Self.MASCOTA" Multiplicity="1" />
+          <End Role="REGISTRO_ADOPCION" Type="Self.REGISTRO_ADOPCION" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="MASCOTA">
+              <PropertyRef Name="ID_MASCOTA" />
+            </Principal>
+            <Dependent Role="REGISTRO_ADOPCION">
+              <PropertyRef Name="ID_REGISTRO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MASCOTA__RELATIONS_PERSONA">
+          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="1" />
+          <End Role="MASCOTA_ABANDONADA" Type="Self.MASCOTA_ABANDONADA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="ID_PERSONA" />
+            </Principal>
+            <Dependent Role="MASCOTA_ABANDONADA">
+              <PropertyRef Name="ID_PERSONA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MASCOTA__RELATIONS_TIPO_MAS">
+          <End Role="TIPO_MASCOTA" Type="Self.TIPO_MASCOTA" Multiplicity="0..1" />
+          <End Role="MASCOTA_ABANDONADA" Type="Self.MASCOTA_ABANDONADA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_MASCOTA">
+              <PropertyRef Name="ID_TIPOM" />
+            </Principal>
+            <Dependent Role="MASCOTA_ABANDONADA">
+              <PropertyRef Name="ID_TIPOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MASCOTA__RELATIONS_UBICACIO">
+          <End Role="UBICACION_MASCOTA" Type="Self.UBICACION_MASCOTA" Multiplicity="0..1" />
+          <End Role="MASCOTA_ABANDONADA" Type="Self.MASCOTA_ABANDONADA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UBICACION_MASCOTA">
+              <PropertyRef Name="ID_UBICACION" />
+            </Principal>
+            <Dependent Role="MASCOTA_ABANDONADA">
+              <PropertyRef Name="ID_UBICACION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REGIONES_RELATIONS_PAISES">
+          <End Role="PAISES" Type="Self.PAISES" Multiplicity="1" />
+          <End Role="REGIONES" Type="Self.REGIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAISES">
+              <PropertyRef Name="ID_PAIS" />
+            </Principal>
+            <Dependent Role="REGIONES">
+              <PropertyRef Name="ID_PAIS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSONA_RELATIONS_TIPO_PER">
+          <End Role="TIPO_PERSONA" Type="Self.TIPO_PERSONA" Multiplicity="0..1" />
+          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TIPO_PERSONA">
+              <PropertyRef Name="ID_TPERSONA" />
+            </Principal>
+            <Dependent Role="PERSONA">
+              <PropertyRef Name="ID_TPERSONA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REGISTRO_ADOPCION_PERSONA">
+          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="1" />
+          <End Role="REGISTRO_ADOPCION" Type="Self.REGISTRO_ADOPCION" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="ID_PERSONA" />
+            </Principal>
+            <Dependent Role="REGISTRO_ADOPCION">
+              <PropertyRef Name="ID_REGISTRO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REGISTRO_DONACION_PERSONA">
+          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="0..1" />
+          <End Role="REGISTRO_DONACION" Type="Self.REGISTRO_DONACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="ID_PERSONA" />
+            </Principal>
+            <Dependent Role="REGISTRO_DONACION">
+              <PropertyRef Name="ID_SOLICITUD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SEGUIMIENTO_ADOPCION_PERSONA">
+          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="0..1" />
+          <End Role="SEGUIMIENTO_ADOPCION" Type="Self.SEGUIMIENTO_ADOPCION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="ID_PERSONA" />
+            </Principal>
+            <Dependent Role="SEGUIMIENTO_ADOPCION">
+              <PropertyRef Name="ID_PERSONA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SOLICITUD_DONACIONES_PERSONA">
+          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="0..1" />
+          <End Role="SOLICITUD_DONACIONES" Type="Self.SOLICITUD_DONACIONES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="ID_PERSONA" />
+            </Principal>
+            <Dependent Role="SOLICITUD_DONACIONES">
+              <PropertyRef Name="SOLICITUD1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USURIOS_LISTA_PERSONA">
+          <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="0..1" />
+          <End Role="USUARIO_LISTA" Type="Self.USUARIO_LISTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSONA">
+              <PropertyRef Name="ID_PERSONA" />
+            </Principal>
+            <Dependent Role="USUARIO_LISTA">
+              <PropertyRef Name="ID_PERSONA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REGISTRO_DONACION_SOLICITUD_DONACIONES">
+          <End Role="SOLICITUD_DONACIONES" Type="Self.SOLICITUD_DONACIONES" Multiplicity="0..1" />
+          <End Role="REGISTRO_DONACION" Type="Self.REGISTRO_DONACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SOLICITUD_DONACIONES">
+              <PropertyRef Name="ID_SOLICITUD" />
+            </Principal>
+            <Dependent Role="REGISTRO_DONACION">
+              <PropertyRef Name="ID_PER_DONACION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="opemascotasEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ADOPTAR_MASCOTA" EntityType="Self.ADOPTAR_MASCOTA" />
+          <EntitySet Name="CIUDADES" EntityType="Self.CIUDADES" />
+          <EntitySet Name="COMUNAS" EntityType="Self.COMUNAS" />
+          <EntitySet Name="DONACIONES" EntityType="Self.DONACIONES" />
+          <EntitySet Name="GENERO_MASCOTA" EntityType="Self.GENERO_MASCOTA" />
+          <EntitySet Name="LISTA_NEGRA" EntityType="Self.LISTA_NEGRA" />
+          <EntitySet Name="MASCOTA" EntityType="Self.MASCOTA" />
+          <EntitySet Name="MASCOTA_ABANDONADA" EntityType="Self.MASCOTA_ABANDONADA" />
+          <EntitySet Name="PAISES" EntityType="Self.PAISES" />
+          <EntitySet Name="PERSONA" EntityType="Self.PERSONA" />
+          <EntitySet Name="REGIONES" EntityType="Self.REGIONES" />
+          <EntitySet Name="REGISTRO_ADOPCION" EntityType="Self.REGISTRO_ADOPCION" />
+          <EntitySet Name="REGISTRO_DONACION" EntityType="Self.REGISTRO_DONACION" />
+          <EntitySet Name="SEGUIMIENTO_ADOPCION" EntityType="Self.SEGUIMIENTO_ADOPCION" />
+          <EntitySet Name="SOLICITUD_DONACIONES" EntityType="Self.SOLICITUD_DONACIONES" />
+          <EntitySet Name="TIPO_DONACION" EntityType="Self.TIPO_DONACION" />
+          <EntitySet Name="TIPO_MASCOTA" EntityType="Self.TIPO_MASCOTA" />
+          <EntitySet Name="TIPO_PERSONA" EntityType="Self.TIPO_PERSONA" />
+          <EntitySet Name="UBICACION_MASCOTA" EntityType="Self.UBICACION_MASCOTA" />
+          <EntitySet Name="USUARIO_LISTA" EntityType="Self.USUARIO_LISTA" />
+          <AssociationSet Name="FK_DAR_ADOPCION_MASCOTA" Association="Self.FK_DAR_ADOPCION_MASCOTA">
+            <End Role="MASCOTA" EntitySet="MASCOTA" />
+            <End Role="ADOPTAR_MASCOTA" EntitySet="ADOPTAR_MASCOTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SEGUIMIENTO_ADOPCION_DAR_ADOPCION" Association="Self.FK_SEGUIMIENTO_ADOPCION_DAR_ADOPCION">
+            <End Role="ADOPTAR_MASCOTA" EntitySet="ADOPTAR_MASCOTA" />
+            <End Role="SEGUIMIENTO_ADOPCION" EntitySet="SEGUIMIENTO_ADOPCION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CIUDADES_RELATIONS_REGIONES" Association="Self.FK_CIUDADES_RELATIONS_REGIONES">
+            <End Role="REGIONES" EntitySet="REGIONES" />
+            <End Role="CIUDADES" EntitySet="CIUDADES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COMUNAS_CIUDAD_CO_CIUDADES" Association="Self.FK_COMUNAS_CIUDAD_CO_CIUDADES">
+            <End Role="CIUDADES" EntitySet="CIUDADES" />
+            <End Role="COMUNAS" EntitySet="COMUNAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MASCOTA_RELATIONS_COMUNAS" Association="Self.FK_MASCOTA_RELATIONS_COMUNAS">
+            <End Role="COMUNAS" EntitySet="COMUNAS" />
+            <End Role="MASCOTA" EntitySet="MASCOTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DONACION_RELATIONS_TIPO_DON" Association="Self.FK_DONACION_RELATIONS_TIPO_DON">
+            <End Role="TIPO_DONACION" EntitySet="TIPO_DONACION" />
+            <End Role="DONACIONES" EntitySet="DONACIONES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MASCOTA__RELATIONS_GENERO_M" Association="Self.FK_MASCOTA__RELATIONS_GENERO_M">
+            <End Role="GENERO_MASCOTA" EntitySet="GENERO_MASCOTA" />
+            <End Role="MASCOTA_ABANDONADA" EntitySet="MASCOTA_ABANDONADA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MASCOTA_RELATIONS_GENERO_M" Association="Self.FK_MASCOTA_RELATIONS_GENERO_M">
+            <End Role="GENERO_MASCOTA" EntitySet="GENERO_MASCOTA" />
+            <End Role="MASCOTA" EntitySet="MASCOTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USURIOS_LISTA_LISTA_NEGRA" Association="Self.FK_USURIOS_LISTA_LISTA_NEGRA">
+            <End Role="LISTA_NEGRA" EntitySet="LISTA_NEGRA" />
+            <End Role="USUARIO_LISTA" EntitySet="USUARIO_LISTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MASCOTA_RELATIONS_TIPO_MAS" Association="Self.FK_MASCOTA_RELATIONS_TIPO_MAS">
+            <End Role="TIPO_MASCOTA" EntitySet="TIPO_MASCOTA" />
+            <End Role="MASCOTA" EntitySet="MASCOTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REGISTRO_ADOPCION_MASCOTA" Association="Self.FK_REGISTRO_ADOPCION_MASCOTA">
+            <End Role="MASCOTA" EntitySet="MASCOTA" />
+            <End Role="REGISTRO_ADOPCION" EntitySet="REGISTRO_ADOPCION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MASCOTA__RELATIONS_PERSONA" Association="Self.FK_MASCOTA__RELATIONS_PERSONA">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="MASCOTA_ABANDONADA" EntitySet="MASCOTA_ABANDONADA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MASCOTA__RELATIONS_TIPO_MAS" Association="Self.FK_MASCOTA__RELATIONS_TIPO_MAS">
+            <End Role="TIPO_MASCOTA" EntitySet="TIPO_MASCOTA" />
+            <End Role="MASCOTA_ABANDONADA" EntitySet="MASCOTA_ABANDONADA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MASCOTA__RELATIONS_UBICACIO" Association="Self.FK_MASCOTA__RELATIONS_UBICACIO">
+            <End Role="UBICACION_MASCOTA" EntitySet="UBICACION_MASCOTA" />
+            <End Role="MASCOTA_ABANDONADA" EntitySet="MASCOTA_ABANDONADA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REGIONES_RELATIONS_PAISES" Association="Self.FK_REGIONES_RELATIONS_PAISES">
+            <End Role="PAISES" EntitySet="PAISES" />
+            <End Role="REGIONES" EntitySet="REGIONES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSONA_RELATIONS_TIPO_PER" Association="Self.FK_PERSONA_RELATIONS_TIPO_PER">
+            <End Role="TIPO_PERSONA" EntitySet="TIPO_PERSONA" />
+            <End Role="PERSONA" EntitySet="PERSONA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REGISTRO_ADOPCION_PERSONA" Association="Self.FK_REGISTRO_ADOPCION_PERSONA">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="REGISTRO_ADOPCION" EntitySet="REGISTRO_ADOPCION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REGISTRO_DONACION_PERSONA" Association="Self.FK_REGISTRO_DONACION_PERSONA">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="REGISTRO_DONACION" EntitySet="REGISTRO_DONACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SEGUIMIENTO_ADOPCION_PERSONA" Association="Self.FK_SEGUIMIENTO_ADOPCION_PERSONA">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="SEGUIMIENTO_ADOPCION" EntitySet="SEGUIMIENTO_ADOPCION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SOLICITUD_DONACIONES_PERSONA" Association="Self.FK_SOLICITUD_DONACIONES_PERSONA">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="SOLICITUD_DONACIONES" EntitySet="SOLICITUD_DONACIONES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USURIOS_LISTA_PERSONA" Association="Self.FK_USURIOS_LISTA_PERSONA">
+            <End Role="PERSONA" EntitySet="PERSONA" />
+            <End Role="USUARIO_LISTA" EntitySet="USUARIO_LISTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REGISTRO_DONACION_SOLICITUD_DONACIONES" Association="Self.FK_REGISTRO_DONACION_SOLICITUD_DONACIONES">
+            <End Role="SOLICITUD_DONACIONES" EntitySet="SOLICITUD_DONACIONES" />
+            <End Role="REGISTRO_DONACION" EntitySet="REGISTRO_DONACION" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="opemascotasModelStoreContainer" CdmEntityContainer="opemascotasEntities">
+          <EntitySetMapping Name="ADOPTAR_MASCOTA">
+            <EntityTypeMapping TypeName="opemascotasModel.ADOPTAR_MASCOTA">
+              <MappingFragment StoreEntitySet="ADOPTAR_MASCOTA">
+                <ScalarProperty Name="ID_AD" ColumnName="ID_AD" />
+                <ScalarProperty Name="ID_MASCOTA" ColumnName="ID_MASCOTA" />
+                <ScalarProperty Name="ADOPTADO" ColumnName="ADOPTADO" />
+                <ScalarProperty Name="USER_CREAR_AD" ColumnName="USER_CREAR_AD" />
+                <ScalarProperty Name="USER_ELIMINAR_AD" ColumnName="USER_ELIMINAR_AD" />
+                <ScalarProperty Name="USER_ACTUALIZAR_AD" ColumnName="USER_ACTUALIZAR_AD" />
+                <ScalarProperty Name="USER_CREAR_FAD" ColumnName="USER_CREAR_FAD" />
+                <ScalarProperty Name="USER_ELIMINAR_FAD" ColumnName="USER_ELIMINAR_FAD" />
+                <ScalarProperty Name="USER_ACTUALIZAR_FAD" ColumnName="USER_ACTUALIZAR_FAD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CIUDADES">
+            <EntityTypeMapping TypeName="opemascotasModel.CIUDADES">
+              <MappingFragment StoreEntitySet="CIUDADES">
+                <ScalarProperty Name="ID_CIUDAD" ColumnName="ID_CIUDAD" />
+                <ScalarProperty Name="ID_REGION" ColumnName="ID_REGION" />
+                <ScalarProperty Name="CIUDAD" ColumnName="CIUDAD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COMUNAS">
+            <EntityTypeMapping TypeName="opemascotasModel.COMUNAS">
+              <MappingFragment StoreEntitySet="COMUNAS">
+                <ScalarProperty Name="ID_COMUNA" ColumnName="ID_COMUNA" />
+                <ScalarProperty Name="ID_CIUDAD" ColumnName="ID_CIUDAD" />
+                <ScalarProperty Name="COMUNA" ColumnName="COMUNA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DONACIONES">
+            <EntityTypeMapping TypeName="opemascotasModel.DONACIONES">
+              <MappingFragment StoreEntitySet="DONACIONES">
+                <ScalarProperty Name="ID_DONAR" ColumnName="ID_DONAR" />
+                <ScalarProperty Name="ID_TIPOD" ColumnName="ID_TIPOD" />
+                <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+                <ScalarProperty Name="FOTO_BOLETA" ColumnName="FOTO_BOLETA" />
+                <ScalarProperty Name="FOTO_BOLETA2" ColumnName="FOTO_BOLETA2" />
+                <ScalarProperty Name="FOTO_BOLETA3" ColumnName="FOTO_BOLETA3" />
+                <ScalarProperty Name="USER_CREAR_DN" ColumnName="USER_CREAR_DN" />
+                <ScalarProperty Name="USER_ELIMINAR_DN" ColumnName="USER_ELIMINAR_DN" />
+                <ScalarProperty Name="USER_ACTUALIZAR_DN" ColumnName="USER_ACTUALIZAR_DN" />
+                <ScalarProperty Name="USER_CREAR_FDN" ColumnName="USER_CREAR_FDN" />
+                <ScalarProperty Name="USER_ELIMINAR_FDN" ColumnName="USER_ELIMINAR_FDN" />
+                <ScalarProperty Name="USER_ACTUALIZAR_FDN" ColumnName="USER_ACTUALIZAR_FDN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GENERO_MASCOTA">
+            <EntityTypeMapping TypeName="opemascotasModel.GENERO_MASCOTA">
+              <MappingFragment StoreEntitySet="GENERO_MASCOTA">
+                <ScalarProperty Name="ID_GENERO" ColumnName="ID_GENERO" />
+                <ScalarProperty Name="GENERO" ColumnName="GENERO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LISTA_NEGRA">
+            <EntityTypeMapping TypeName="opemascotasModel.LISTA_NEGRA">
+              <MappingFragment StoreEntitySet="LISTA_NEGRA">
+                <ScalarProperty Name="ID_LISTA" ColumnName="ID_LISTA" />
+                <ScalarProperty Name="LISTA_NEGRA1" ColumnName="LISTA_NEGRA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MASCOTA">
+            <EntityTypeMapping TypeName="opemascotasModel.MASCOTA">
+              <MappingFragment StoreEntitySet="MASCOTA">
+                <ScalarProperty Name="ID_MASCOTA" ColumnName="ID_MASCOTA" />
+                <ScalarProperty Name="ID_COMUNA" ColumnName="ID_COMUNA" />
+                <ScalarProperty Name="ID_TIPOM" ColumnName="ID_TIPOM" />
+                <ScalarProperty Name="ID_GENERO" ColumnName="ID_GENERO" />
+                <ScalarProperty Name="NICK_MASCOTA" ColumnName="NICK_MASCOTA" />
+                <ScalarProperty Name="TAMANO" ColumnName="TAMANO" />
+                <ScalarProperty Name="FOTO_M1" ColumnName="FOTO_M1" />
+                <ScalarProperty Name="FOTO_M2" ColumnName="FOTO_M2" />
+                <ScalarProperty Name="FOTO_M3" ColumnName="FOTO_M3" />
+                <ScalarProperty Name="USER_CREAR_MASCOTA" ColumnName="USER_CREAR_MASCOTA" />
+                <ScalarProperty Name="USER_ELIMINAR_MASCOTA" ColumnName="USER_ELIMINAR_MASCOTA" />
+                <ScalarProperty Name="USER_ACTUALIZAR_MASCOTA" ColumnName="USER_ACTUALIZAR_MASCOTA" />
+                <ScalarProperty Name="USER_CREAR_FMASC" ColumnName="USER_CREAR_FMASC" />
+                <ScalarProperty Name="USER_ELIMINAR_FMASC" ColumnName="USER_ELIMINAR_FMASC" />
+                <ScalarProperty Name="USER_ACTUALIZAR_FMASC" ColumnName="USER_ACTUALIZAR_FMASC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MASCOTA_ABANDONADA">
+            <EntityTypeMapping TypeName="opemascotasModel.MASCOTA_ABANDONADA">
+              <MappingFragment StoreEntitySet="MASCOTA_ABANDONADA">
+                <ScalarProperty Name="ID_ABANDONADO" ColumnName="ID_ABANDONADO" />
+                <ScalarProperty Name="ID_UBICACION" ColumnName="ID_UBICACION" />
+                <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+                <ScalarProperty Name="ID_TIPOM" ColumnName="ID_TIPOM" />
+                <ScalarProperty Name="ID_GENERO" ColumnName="ID_GENERO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="FOTO_MA1" ColumnName="FOTO_MA1" />
+                <ScalarProperty Name="FOTO_MA2" ColumnName="FOTO_MA2" />
+                <ScalarProperty Name="FOTO_MA3" ColumnName="FOTO_MA3" />
+                <ScalarProperty Name="USER_CREAR_AB" ColumnName="USER_CREAR_AB" />
+                <ScalarProperty Name="USER_ELIMINAR_AB" ColumnName="USER_ELIMINAR_AB" />
+                <ScalarProperty Name="USER_ACTUALIZAR_AB" ColumnName="USER_ACTUALIZAR_AB" />
+                <ScalarProperty Name="USER_CREAR_FAB" ColumnName="USER_CREAR_FAB" />
+                <ScalarProperty Name="USER_ELIMINAR_FAB" ColumnName="USER_ELIMINAR_FAB" />
+                <ScalarProperty Name="USER_ACTUALIZAR_FAB" ColumnName="USER_ACTUALIZAR_FAB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PAISES">
+            <EntityTypeMapping TypeName="opemascotasModel.PAISES">
+              <MappingFragment StoreEntitySet="PAISES">
+                <ScalarProperty Name="ID_PAIS" ColumnName="ID_PAIS" />
+                <ScalarProperty Name="PAIS" ColumnName="PAIS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERSONA">
+            <EntityTypeMapping TypeName="opemascotasModel.PERSONA">
+              <MappingFragment StoreEntitySet="PERSONA">
+                <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+                <ScalarProperty Name="ID_TPERSONA" ColumnName="ID_TPERSONA" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="AP_PATERNO" ColumnName="AP_PATERNO" />
+                <ScalarProperty Name="AP_MATERNO" ColumnName="AP_MATERNO" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="USER_CREAR_P" ColumnName="USER_CREAR_P" />
+                <ScalarProperty Name="PER_ELIMINAR" ColumnName="PER_ELIMINAR" />
+                <ScalarProperty Name="PER_ACTUALIZAR" ColumnName="PER_ACTUALIZAR" />
+                <ScalarProperty Name="FPER_CREAR" ColumnName="FPER_CREAR" />
+                <ScalarProperty Name="FPER_ELIMINAR" ColumnName="FPER_ELIMINAR" />
+                <ScalarProperty Name="FPER_ACTUALIZAR" ColumnName="FPER_ACTUALIZAR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REGIONES">
+            <EntityTypeMapping TypeName="opemascotasModel.REGIONES">
+              <MappingFragment StoreEntitySet="REGIONES">
+                <ScalarProperty Name="ID_REGION" ColumnName="ID_REGION" />
+                <ScalarProperty Name="ID_PAIS" ColumnName="ID_PAIS" />
+                <ScalarProperty Name="REGION" ColumnName="REGION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REGISTRO_ADOPCION">
+            <EntityTypeMapping TypeName="opemascotasModel.REGISTRO_ADOPCION">
+              <MappingFragment StoreEntitySet="REGISTRO_ADOPCION">
+                <ScalarProperty Name="ID_REGISTRO" ColumnName="ID_REGISTRO" />
+                <ScalarProperty Name="ID_MASCOTA" ColumnName="ID_MASCOTA" />
+                <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REGISTRO_DONACION">
+            <EntityTypeMapping TypeName="opemascotasModel.REGISTRO_DONACION">
+              <MappingFragment StoreEntitySet="REGISTRO_DONACION">
+                <ScalarProperty Name="ID_REGISTRO" ColumnName="ID_REGISTRO" />
+                <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
+                <ScalarProperty Name="ID_PER_DONACION" ColumnName="ID_PER_DONACION" />
+                <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SEGUIMIENTO_ADOPCION">
+            <EntityTypeMapping TypeName="opemascotasModel.SEGUIMIENTO_ADOPCION">
+              <MappingFragment StoreEntitySet="SEGUIMIENTO_ADOPCION">
+                <ScalarProperty Name="ID_SEGUIMIENTO" ColumnName="ID_SEGUIMIENTO" />
+                <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+                <ScalarProperty Name="ID_AD" ColumnName="ID_AD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SOLICITUD_DONACIONES">
+            <EntityTypeMapping TypeName="opemascotasModel.SOLICITUD_DONACIONES">
+              <MappingFragment StoreEntitySet="SOLICITUD_DONACIONES">
+                <ScalarProperty Name="ID_SOLICITUD" ColumnName="ID_SOLICITUD" />
+                <ScalarProperty Name="SOLICITUD1" ColumnName="SOLICITUD1" />
+                <ScalarProperty Name="SOLICITUD2" ColumnName="SOLICITUD2" />
+                <ScalarProperty Name="FOTO_BOLETA1" ColumnName="FOTO_BOLETA1" />
+                <ScalarProperty Name="FOTO_BOLETA2" ColumnName="FOTO_BOLETA2" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="USER_CREAR_SD" ColumnName="USER_CREAR_SD" />
+                <ScalarProperty Name="USER_ELIMINAR_SD" ColumnName="USER_ELIMINAR_SD" />
+                <ScalarProperty Name="USER_ACTUALIZAR_SD" ColumnName="USER_ACTUALIZAR_SD" />
+                <ScalarProperty Name="USER_CREAR_FSD" ColumnName="USER_CREAR_FSD" />
+                <ScalarProperty Name="USER_ELIMINAR_FSD" ColumnName="USER_ELIMINAR_FSD" />
+                <ScalarProperty Name="USER_ACTUALIZAR_FSD" ColumnName="USER_ACTUALIZAR_FSD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPO_DONACION">
+            <EntityTypeMapping TypeName="opemascotasModel.TIPO_DONACION">
+              <MappingFragment StoreEntitySet="TIPO_DONACION">
+                <ScalarProperty Name="ID_TIPOD" ColumnName="ID_TIPOD" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPO_MASCOTA">
+            <EntityTypeMapping TypeName="opemascotasModel.TIPO_MASCOTA">
+              <MappingFragment StoreEntitySet="TIPO_MASCOTA">
+                <ScalarProperty Name="ID_TIPOM" ColumnName="ID_TIPOM" />
+                <ScalarProperty Name="TIPO_M" ColumnName="TIPO_M" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TIPO_PERSONA">
+            <EntityTypeMapping TypeName="opemascotasModel.TIPO_PERSONA">
+              <MappingFragment StoreEntitySet="TIPO_PERSONA">
+                <ScalarProperty Name="ID_TPERSONA" ColumnName="ID_TPERSONA" />
+                <ScalarProperty Name="TIPO_PERSONA1" ColumnName="TIPO_PERSONA" />
+                <ScalarProperty Name="USER_CREAR_TP" ColumnName="USER_CREAR_TP" />
+                <ScalarProperty Name="USER_ELIMINAR_TP" ColumnName="USER_ELIMINAR_TP" />
+                <ScalarProperty Name="USER_ACTUALIZAR_TP" ColumnName="USER_ACTUALIZAR_TP" />
+                <ScalarProperty Name="USER_CREAR_FTP" ColumnName="USER_CREAR_FTP" />
+                <ScalarProperty Name="USER_ELIMINAR_FTP" ColumnName="USER_ELIMINAR_FTP" />
+                <ScalarProperty Name="USER_ACTUALIZAR_FTP" ColumnName="USER_ACTUALIZAR_FTP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UBICACION_MASCOTA">
+            <EntityTypeMapping TypeName="opemascotasModel.UBICACION_MASCOTA">
+              <MappingFragment StoreEntitySet="UBICACION_MASCOTA">
+                <ScalarProperty Name="ID_UBICACION" ColumnName="ID_UBICACION" />
+                <ScalarProperty Name="LATITUD" ColumnName="LATITUD" />
+                <ScalarProperty Name="LONGITUD" ColumnName="LONGITUD" />
+                <ScalarProperty Name="UBICACION" ColumnName="UBICACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USUARIO_LISTA">
+            <EntityTypeMapping TypeName="opemascotasModel.USUARIO_LISTA">
+              <MappingFragment StoreEntitySet="USUARIO_LISTA">
+                <ScalarProperty Name="ID_USUARIOS_LISTA" ColumnName="ID_USUARIOS_LISTA" />
+                <ScalarProperty Name="ID_LISTA" ColumnName="ID_LISTA" />
+                <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
