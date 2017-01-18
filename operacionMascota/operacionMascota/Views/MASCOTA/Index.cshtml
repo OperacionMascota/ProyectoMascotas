@@ -1,0 +1,123 @@
+﻿@model IEnumerable<operacionMascota.Models.MASCOTA>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Mascota
+        </th>
+        <th>
+            Tamaño
+        </th>
+        <th>
+            Foto 1
+        </th>
+        <th>
+            Foto 2
+        </th>
+        <th>
+            Foto 3
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_CREAR_MASCOTA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_ELIMINAR_MASCOTA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_ACTUALIZAR_MASCOTA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_CREAR_FMASC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_ELIMINAR_FMASC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_ACTUALIZAR_FMASC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ADOPTAR_MASCOTA.USER_CREAR_AD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COMUNAS.COMUNA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GENERO_MASCOTA.GENERO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIPO_MASCOTA.TIPO_M)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REGISTRO_ADOPCION.ID_REGISTRO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NICK_MASCOTA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TAMANO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FOTO_M1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FOTO_M2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FOTO_M3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_CREAR_MASCOTA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_ELIMINAR_MASCOTA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_ACTUALIZAR_MASCOTA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_CREAR_FMASC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_ELIMINAR_FMASC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_ACTUALIZAR_FMASC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ADOPTAR_MASCOTA.USER_CREAR_AD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COMUNAS.COMUNA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GENERO_MASCOTA.GENERO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIPO_MASCOTA.TIPO_M)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REGISTRO_ADOPCION.ID_REGISTRO)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_MASCOTA }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_MASCOTA }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_MASCOTA })
+        </td>
+    </tr>
+}
+
+</table>

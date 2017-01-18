@@ -37,7 +37,7 @@ namespace operacionMascota.Controllers
         }
 
         // GET: PERSONA/Create
-        public ActionResult Create()
+        public ActionResult Crear()
         {
             ViewBag.ID_TPERSONA = new SelectList(db.TIPO_PERSONA, "ID_TPERSONA", "TIPO_PERSONA1");
             ViewBag.ID_PERSONA = new SelectList(db.REGISTRO_ADOPCION, "ID_REGISTRO", "ID_REGISTRO");

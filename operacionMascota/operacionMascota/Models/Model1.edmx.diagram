@@ -5,26 +5,26 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="1bb99180038f4813b0de150734f88665" Name="Diagram1">
-        <EntityTypeShape EntityType="opemascotasModel.ADOPTAR_MASCOTA" Width="1.5" PointX="6" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="opemascotasModel.ADOPTAR_MASCOTA" Width="1.5" PointX="8.125" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="opemascotasModel.CIUDADES" Width="1.5" PointX="1.5" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="opemascotasModel.COMUNAS" Width="1.5" PointX="1.5" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="opemascotasModel.DONACIONES" Width="1.5" PointX="11" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="opemascotasModel.GENERO_MASCOTA" Width="1.5" PointX="1.5" PointY="21.125" IsExpanded="true" />
         <EntityTypeShape EntityType="opemascotasModel.LISTA_NEGRA" Width="1.5" PointX="6" PointY="21.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="opemascotasModel.MASCOTA" Width="1.5" PointX="3.75" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="opemascotasModel.MASCOTA_ABANDONADA" Width="1.5" PointX="5.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="opemascotasModel.MASCOTA" Width="1.5" PointX="5.125" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="opemascotasModel.MASCOTA_ABANDONADA" Width="1.5" PointX="8.875" PointY="10.875" IsExpanded="true" />
         <EntityTypeShape EntityType="opemascotasModel.PAISES" Width="1.5" PointX="1.5" PointY="18.625" IsExpanded="true" />
         <EntityTypeShape EntityType="opemascotasModel.PERSONA" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
         <EntityTypeShape EntityType="opemascotasModel.REGIONES" Width="1.5" PointX="1.5" PointY="15.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="opemascotasModel.REGISTRO_ADOPCION" Width="1.5" PointX="8.25" PointY="11" IsExpanded="true" />
-        <EntityTypeShape EntityType="opemascotasModel.REGISTRO_DONACION" Width="1.5" PointX="7.5" PointY="17.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="opemascotasModel.SEGUIMIENTO_ADOPCION" Width="1.5" PointX="8.25" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="opemascotasModel.SOLICITUD_DONACIONES" Width="1.5" PointX="5.25" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="opemascotasModel.REGISTRO_ADOPCION" Width="1.5" PointX="12.5" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="opemascotasModel.REGISTRO_DONACION" Width="1.5" PointX="7.625" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="opemascotasModel.SEGUIMIENTO_ADOPCION" Width="1.5" PointX="10.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="opemascotasModel.SOLICITUD_DONACIONES" Width="1.5" PointX="6.125" PointY="23.875" IsExpanded="true" />
         <EntityTypeShape EntityType="opemascotasModel.TIPO_DONACION" Width="1.5" PointX="8.75" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="opemascotasModel.TIPO_MASCOTA" Width="1.5" PointX="1.5" PointY="23.75" IsExpanded="true" />
         <EntityTypeShape EntityType="opemascotasModel.TIPO_PERSONA" Width="1.5" PointX="0.75" PointY="10.625" IsExpanded="true" />
         <EntityTypeShape EntityType="opemascotasModel.UBICACION_MASCOTA" Width="1.5" PointX="3" PointY="27" IsExpanded="true" />
-        <EntityTypeShape EntityType="opemascotasModel.USUARIO_LISTA" Width="1.5" PointX="8.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="opemascotasModel.USUARIO_LISTA" Width="1.5" PointX="11.25" PointY="14" IsExpanded="true" />
         <AssociationConnector Association="opemascotasModel.FK_DAR_ADOPCION_MASCOTA" ManuallyRouted="false" />
         <AssociationConnector Association="opemascotasModel.FK_SEGUIMIENTO_ADOPCION_DAR_ADOPCION" ManuallyRouted="false" />
         <AssociationConnector Association="opemascotasModel.FK_CIUDADES_RELATIONS_REGIONES" ManuallyRouted="false" />

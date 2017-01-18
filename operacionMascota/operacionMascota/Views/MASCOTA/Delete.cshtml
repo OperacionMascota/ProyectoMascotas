@@ -1,0 +1,152 @@
+﻿@model operacionMascota.Models.MASCOTA
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>MASCOTA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NICK_MASCOTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NICK_MASCOTA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TAMANO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TAMANO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FOTO_M1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FOTO_M1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FOTO_M2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FOTO_M2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FOTO_M3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FOTO_M3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_CREAR_MASCOTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_CREAR_MASCOTA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_ELIMINAR_MASCOTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_ELIMINAR_MASCOTA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_ACTUALIZAR_MASCOTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_ACTUALIZAR_MASCOTA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_CREAR_FMASC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_CREAR_FMASC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_ELIMINAR_FMASC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_ELIMINAR_FMASC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_ACTUALIZAR_FMASC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_ACTUALIZAR_FMASC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADOPTAR_MASCOTA.USER_CREAR_AD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADOPTAR_MASCOTA.USER_CREAR_AD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COMUNAS.COMUNA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COMUNAS.COMUNA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GENERO_MASCOTA.GENERO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GENERO_MASCOTA.GENERO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO_MASCOTA.TIPO_M)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO_MASCOTA.TIPO_M)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REGISTRO_ADOPCION.ID_REGISTRO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REGISTRO_ADOPCION.ID_REGISTRO)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
